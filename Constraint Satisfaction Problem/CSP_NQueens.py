@@ -28,10 +28,10 @@ def print_solutions(solutions, shape):
     num = 1
     for solution in solutions:
         print(f"Solution {num} {solution}:")
-        WHITE_TILE = "███"
-        BLACK_TILE = "   "
-        QUEEN_WHITE_TILE = "█Q█"
-        QUEEN_BLACK_TILE = " Q "
+        WHITE_TILE = "\033[47m  \033[0m"  # White tile background
+        BLACK_TILE = "\033[40m  \033[0m"  # Black tile background
+        QUEEN_WHITE_TILE = "\033[47m\033[30m Q\033[0m"  # White background with black 'Q'
+        QUEEN_BLACK_TILE = "\033[40m\033[37m Q\033[0m"  # Black background with white 'Q'
 
         board = np.fromfunction(lambda i, j: (i + j) % 2, (shape, shape), dtype=int)
         for row, col in enumerate(solution):
