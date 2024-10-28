@@ -28,10 +28,10 @@ def print_solutions(solutions, shape):
     num = 1
     for solution in solutions:
         print(f"Solution {num} {solution}:")
-        WHITE_TILE = "██"
-        BLACK_TILE = "  "
-        QUEEN_WHITE_TILE = "█Q"
-        QUEEN_BLACK_TILE = " Q"
+        WHITE_TILE = "███"
+        BLACK_TILE = "   "
+        QUEEN_WHITE_TILE = "█Q█"
+        QUEEN_BLACK_TILE = " Q "
 
         board = np.fromfunction(lambda i, j: (i + j) % 2, (shape, shape), dtype=int)
         for row, col in enumerate(solution):
@@ -42,7 +42,7 @@ def print_solutions(solutions, shape):
         num+=1
         print()
 
-def input_n(prompt="Please enter a positive number: "):
+def input_n(prompt="Please enter a positive number for the board size: "):
     while True:
         try:
             user_input = input(prompt)
